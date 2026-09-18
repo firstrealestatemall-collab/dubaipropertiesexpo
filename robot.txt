@@ -1,0 +1,20 @@
+# Allow all standard web crawlers and AI agents
+User-agent: *
+Allow: /
+
+# Allow Google Search, Image & Favicon Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+# Explicitly allow AI documentation files
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# XML Sitemap Location
+Sitemap: https://www.dubaipropertiesexpo.in/sitemap.xml

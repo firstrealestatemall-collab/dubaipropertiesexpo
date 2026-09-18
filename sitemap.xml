@@ -3,7 +3,19 @@
   <url>
     <loc>https://www.dubaipropertiesexpo.in/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.dubaipropertiesexpo.in/privacy-policy.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dubaipropertiesexpo.in/terms-and-conditions.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

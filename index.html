@@ -645,13 +645,25 @@
         .nav-btn.left { left: -60px; }
         .nav-btn.right { right: -60px; }
 
-        @media (max-width: 900px) {
-            .review-card {
-                flex: 0 0 280px;
-                min-width: 280px;
+        @media (min-width: 901px) {
+            .nav-btn {
+                display: flex !important;
             }
-            .nav-btn.left { left: 5px; }
-            .nav-btn.right { right: 5px; }
+        }
+
+        /* 1. Hide left/right review navigation buttons on mobile screens */
+        @media (max-width: 900px) {
+            .nav-btn.left,
+            .nav-btn.right {
+                display: none !important;
+            }
+        }
+
+        /* 2. Hide top navigation bar items on mobile devices */
+        @media (max-width: 900px) {
+            .desktop-nav {
+                display: none !important;
+            }
         }
 
         /* Redesigned Happy Customers Gallery Section (3:4 Image Ratio, No Video CTAs) */

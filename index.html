@@ -1595,7 +1595,7 @@
         </div>
 
         <div class="form-container">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="8ed711f5-f34a-40d3-8fc6-613428e85a34"> 
                 <input type="hidden" name="subject" value="New Dubai Property Expo VIP Lead">
 
@@ -1715,5 +1715,43 @@
             icon.classList.add('fa-bars');
         }
     </script>
+    <script>
+    // Intercept form submission to fire GA4/Google Ads Conversion Event
+    document.getElementById('leadForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Pause default form submit temporarily
+        var form = this;
+
+        // 1. Fire GA4 Conversion Event for Google Ads
+        if (typeof gtag === 'function') {
+            gtag('event', 'ads_conversion_submit_lead_form', {
+                'event_category': 'Lead',
+                'event_label': 'Dubai Property Expo Ad Lead Form'
+            });
+            console.log('GA4 Conversion Event Fired: ads_conversion_submit_lead_form');
+        }
+
+        // 2. Submit form to Web3Forms via AJAX
+        var formData = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data.success) {
+                alert('Thank you! Your VIP Pass registration is confirmed.');
+                form.reset();
+            } else {
+                alert('Form submission error. Please try again.');
+            }
+        })
+        .catch(function(error) {
+            console.error('Submission Error:', error);
+            // Fallback: submit form natively if AJAX fails
+            form.submit();
+        });
+    });
+</script>
 </body>
 </html>

@@ -1244,7 +1244,7 @@
         </nav>
         
         <div class="header-right">
-            <a href="#register" class="btn-gold header-btn">Get Free VIP Pass</a>
+            <a onclick="openModal('vipModal')" class="btn-gold header-btn">Get Free VIP Pass</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -1639,6 +1639,39 @@
                 <button type="submit" class="submit-btn">Claim Free VIP Entry Pass</button>
             </form>
         </div>
+        <!-- Quick VIP Pop-up Modal -->
+        <div id="vipModal" class="modal-overlay">
+            <div class="modal-content" style="max-width: 480px;">
+                <span class="close-modal" onclick="closeModal('vipModal')">&times;</span>
+                <h3 style="color: #302715; text-align: center; margin-bottom: 20px;">Claim Free VIP Entry Pass</h3>
+                
+                <form id="modalLeadForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8ed711f5-f34a-40d3-8fc6-613428e85a34">
+                    <input type="hidden" name="subject" value="New Dubai Property Expo VIP Lead (Pop-up)">
+
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="Full Name" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="Phone Number" placeholder="e.g. 9876543210" minlength="10" maxlength="15" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Venue *</label>
+                        <select name="Venue" required>
+                            <option value="">-- Select Expo Location --</option>
+                            <option value="Baner - Achalare House">The Real Estate Mall - Baner</option>
+                            <option value="Kharadi - Nyati Plaza">The Real Estate Mall - Kharadi</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Claim Free VIP Pass Now</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -1756,6 +1789,5 @@
         });
     });
 </script>
-    
 </body>
 </html>

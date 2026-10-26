@@ -1716,21 +1716,14 @@
         }
     </script>
     <script>
-    // Intercept form submission to fire GA4/Google Ads Conversion Event
     document.getElementById('leadForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Pause default form submit temporarily
+        event.preventDefault(); // Stop default navigation
         var form = this;
+        var submitBtn = form.querySelector('.submit-btn');
 
-        // 1. Fire GA4 Conversion Event for Google Ads
-        if (typeof gtag === 'function') {
-            gtag('event', 'ads_conversion_submit_lead_form', {
-                'event_category': 'Lead',
-                'event_label': 'Dubai Property Expo Ad Lead Form'
-            });
-            console.log('GA4 Conversion Event Fired: ads_conversion_submit_lead_form');
-        }
+        // Disable button during submit to prevent duplicate clicks
+        if (submitBtn) submitBtn.disabled = true;
 
-        // 2. Submit form to Web3Forms via AJAX
         var formData = new FormData(form);
 
         fetch('https://api.web3forms.com/submit', {
@@ -1740,6 +1733,14 @@
         .then(function(response) { return response.json(); })
         .then(function(data) {
             if (data.success) {
+                // 1. FIRE GA4 CONVERSION ONLY ON VERIFIED SUCCESS
+                if (typeof gtag === 'function') {
+                    gtag('event', 'ads_conversion_submit_lead_form', {
+                        'event_category': 'Lead',
+                        'event_label': 'Dubai Property Expo VIP Pass'
+                    });
+                }
+
                 alert('Thank you! Your VIP Pass registration is confirmed.');
                 form.reset();
             } else {
@@ -1748,8 +1749,10 @@
         })
         .catch(function(error) {
             console.error('Submission Error:', error);
-            // Fallback: submit form natively if AJAX fails
-            form.submit();
+            alert('Something went wrong. Please check your connection.');
+        })
+        .finally(function() {
+            if (submitBtn) submitBtn.disabled = false;
         });
     });
 </script>

@@ -18,6 +18,19 @@
     <meta name="twitter:description" content="Explore top real estate properties from AED 750K to AED 50M. Claim your free VIP entry pass now!">
     <meta name="twitter:image" content="https://www.dubaipropertiesexpo.in/images/og-banner.webp">
 
+    <!-- AI Discoverability / LLMs.txt Reference -->
+    <link rel="author" type="text/plain" href="https://www.dubaipropertiesexpo.in/llms.txt">
+
+    <!-- Preconnect to Third-Party Domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Preload & Swap Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -60,6 +73,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Structured Data (Schema.org) for Dubai Property Expo 2026 -->
+    <!-- Structured Data (Schema.org) for Dubai Property Expo 2026 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,12 +84,14 @@
           "url": "https://www.dubaipropertiesexpo.in/",
           "name": "Dubai Property Expo 2026",
           "description": "Official event portal for Dubai Property Expo 2026 hosted by The Real Estate Mall.",
-          "speakable": {
-              "@type": "SpeakableSpecification",
-              "cssSelector": [".ai-summary-box p", ".section-header p"]
+          "about": { 
+            "@type": "Event",
+            "@id": "https://www.dubaipropertiesexpo.in/#event" 
           },
-          "about": { "@id": "https://www.dubaipropertiesexpo.in/#event" },
-          "publisher": { "@id": "https://www.dubaipropertiesexpo.in/#organization" }
+          "publisher": { 
+            "@type": "Organization",
+            "@id": "https://www.dubaipropertiesexpo.in/#organization" 
+          }
         },
         {
           "@type": "Organization",
@@ -114,7 +130,10 @@
             }
           },
           "description": "Explore 200+ luxury projects and 40+ top developers with exclusive spot discounts and tax-free high-ROI options.",
-          "organizer": { "@id": "https://www.dubaipropertiesexpo.in/#organization" },
+          "organizer": { 
+            "@type": "Organization",
+            "@id": "https://www.dubaipropertiesexpo.in/#organization" 
+          },
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -993,24 +1012,24 @@
 
             <div class="gallery-slider">
                 <div class="gallery-track">
-                    <div class="gallery-item"><img src="glimpses1.webp" alt="Dubai Developer Stall 1" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses2.webp" alt="Dubai Developer Stall 2" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses3.webp" alt="Dubai Developer Stall 3" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses4.webp" alt="Dubai Developer Stall 4" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses5.webp" alt="Dubai Developer Stall 5" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses6.webp" alt="Dubai Developer Stall 6" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses7.webp" alt="Dubai Developer Stall 7" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses8.webp" alt="Dubai Developer Stall 8" width="240" height="150" loading="lazy"></div>
+                    <div class="gallery-item"><img src="glimpses1.webp" alt="Dubai Developer Stall 1" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses2.webp" alt="Dubai Developer Stall 2" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses3.webp" alt="Dubai Developer Stall 3" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses4.webp" alt="Dubai Developer Stall 4" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses5.webp" alt="Dubai Developer Stall 5" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses6.webp" alt="Dubai Developer Stall 6" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses7.webp" alt="Dubai Developer Stall 7" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses8.webp" alt="Dubai Developer Stall 8" width="240" height="150" fetchpriority="high"></div>
 
                     <!-- Duplicated Set for Seamless Looping -->
-                    <div class="gallery-item"><img src="glimpses1.webp" alt="Dubai Developer Stall 1" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses2.webp" alt="Dubai Developer Stall 2" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses3.webp" alt="Dubai Developer Stall 3" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses4.webp" alt="Dubai Developer Stall 4" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses5.webp" alt="Dubai Developer Stall 5" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses6.webp" alt="Dubai Developer Stall 6" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses7.webp" alt="Dubai Developer Stall 7" width="240" height="150" loading="lazy"></div>
-                    <div class="gallery-item"><img src="glimpses8.webp" alt="Dubai Developer Stall 8" width="240" height="150" loading="lazy"></div>
+                    <div class="gallery-item"><img src="glimpses1.webp" alt="Dubai Developer Stall 1" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses2.webp" alt="Dubai Developer Stall 2" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses3.webp" alt="Dubai Developer Stall 3" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses4.webp" alt="Dubai Developer Stall 4" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses5.webp" alt="Dubai Developer Stall 5" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses6.webp" alt="Dubai Developer Stall 6" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses7.webp" alt="Dubai Developer Stall 7" width="240" height="150" fetchpriority="high"></div>
+                    <div class="gallery-item"><img src="glimpses8.webp" alt="Dubai Developer Stall 8" width="240" height="150" fetchpriority="high"></div>
                 </div>
             </div>
         </section>
